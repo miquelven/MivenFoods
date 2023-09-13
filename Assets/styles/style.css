@@ -8,12 +8,17 @@
         height:100%;
         width:100vw;
         font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        background: linear-gradient(90deg, rgba(255,83,48,0.12068965517241381) 2%, rgba(255,248,247,1) 17%, rgba(255,255,255,1) 88%, rgba(255,43,0,0.11853448275862066) 100%);
+        overflow-x:hidden
     }
 
     header{
         height: 85px;
         width:100vw;    
-        background: linear-gradient(90deg, rgba(226,137,137,0.6508620689655172) 16%, rgba(255,0,0,0.5581896551724138) 34%);
+        border-bottom:5px  #fcccccc2;
+        border-style: groove;
+
+        /* background: linear-gradient(35deg, rgba(255,83,48,0.22) 4%, rgba(255,248,247,1) 18%, rgba(255,255,255,1) 80%, rgba(255,43,0,0.21982758620689657) 96%); */
         position:static
     }
 
@@ -50,25 +55,23 @@
         cursor: pointer;
         position: relative;
         width: 250px;
+        transition: all ease 100ms    
+    }
+    
+    header .container .search-input:hover{
+        transform: scale(1.05);
     }
 
     header .container .search-input input{
         overflow: hidden;
         width: 100%;
-        background-color: #ee6e6e;
         padding: 8px 16px;
-        color:#fff;
         border: none;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid #000;
         border-radius: 10px;
         outline:none;
-        transition: all ease 100ms    
     }
 
-    header .container .search-input input:hover{
-        transform: scale(1.05);
-        border-bottom-color: #000;
-    }
 
     header .container .search-input input::placeholder{
         color:#fff
@@ -108,6 +111,7 @@
     }
 
     .slider{
+        border-radius:10px;
         height:calc(100vh - 85px);
         background: url('/Assets/SliderImgs/cakeSlide.jpg');
         background-repeat:no-repeat;
@@ -116,6 +120,11 @@
         background-size:cover;
         overflow: hidden;
         color: #fff;
+        margin-top: 30px;   
+        margin-bottom: 80px;
+        border:none;
+        border-bottom:10px groove #fcccccc2;
+    box-shadow: 8px 8px 11px -8px rgba(241, 131, 131, 0.8);
     }
 
     .slider .shadow-slide{
@@ -127,17 +136,20 @@
         background-color: rgba(0,0,0,.4);
         flex-direction: column;
         text-align: center;
+        position:relative
     }
 
     .slider .shadow-slide .description span{
         background-color:#f00;
         border-radius: 10px;
-        padding: 4px 12px;
+        padding: 6px 14px;
         font-weight: bold;
     }
 
     .slider .shadow-slide .description h1{
-        font-size: 3rem;
+        font-size: 4rem;
+        margin-top:50px;
+        margin-bottom: 35px;
     }
 
     .slider .shadow-slide .description .infos{
@@ -149,6 +161,7 @@
         display: flex;
         align-items: center;
         gap:5px;
+        font-weight:bold
     }
 
     .slider .shadow-slide .description p img{
@@ -157,9 +170,73 @@
     }
 
     .slider .shadow-slide .slider-lines{
-
+        position:absolute;
+        bottom: 50px;
+        display: flex;
+        gap: 25px;
     }
 
-    .slider .shadow-slide .slider-lines .lines{
+    .slider .shadow-slide .slider-lines .line{
+        height: 6px;
+        width: 140px;
+        border-radius: 20px;
+        background: rgba(255,255,255,.4);
+    }
+
+    .slider .shadow-slide .slider-lines .line .filledLine{
+        height:inherit;
+        width: 0px;
+        background-color:#fff;
+        border-radius: 20px;
+        animation: LineAnimation 3s linear infinite;
+    }
+
+    @keyframes LineAnimation{
+        0%{
+            width: 0%;
+        }
+        100%{
+            width:100%
+        }   
+    }
+
+    .default{
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        margin-top: 50px
+    }
+    
+    .default .content{
         
     }
+    .default .content h1{
+        text-align:center;
+        font-size:2rem;
+        font-weight:bold;
+        margin-bottom: 40px
+    }
+    
+    .default .content .info-items{
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-radius: 30px;
+        gap:  30px;
+    }
+
+    .default .content .info-items .item{
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        height: 350px;
+        border: 1px solid #000;
+        border-radius: 15px
+    }
+
+    .default .content .info-items .item .areaImg,
+    .default .content .info-items .item .items-content{
+        flex:1;
+    }
+
