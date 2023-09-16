@@ -1,7 +1,9 @@
-Site de Receitas
+# Site de Receitas
 
-- fazer CARNE BOVINA, STORIES, MAIS CURTIDAS, CATEGORIAS, FOOTER
+## Tecnologias:
 
-- template grid;
-- efeito nos cards (com fotos das comidas e descrições)
-- mivenfoods no alto do site
+- HTML, CSS
+
+### Site feito para práticar HTML e CSS, FlexBox, Grid, Animação, responsividade.
+
+(arrumarei as pastas em breve!)

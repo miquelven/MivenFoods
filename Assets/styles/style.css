@@ -19,7 +19,6 @@
         border-style: groove;
 
         /* background: linear-gradient(35deg, rgba(255,83,48,0.22) 4%, rgba(255,248,247,1) 18%, rgba(255,255,255,1) 80%, rgba(255,43,0,0.21982758620689657) 96%); */
-        position:static
     }
 
     .container{
@@ -88,7 +87,13 @@
         height: 20px
     }
 
-    header .container p{
+    header .container .imgMenu{
+        padding: 5px;
+        cursor: pointer;
+        display: none;
+    }
+
+    header .container .item-header{
         display:flex;
         flex-direction:column-reverse;
         align-items:center;
@@ -101,11 +106,14 @@
         transition: transform ease 300ms
     }
 
-    header .container p:hover{
+
+    header .container .item-header:hover{
         transform: scale(1.08)
     }
 
-    header .container p img{
+    header .container .item-header img,
+    header .container .imgMenu img
+    {
         height: 35px;
         width: 35px
     }
@@ -120,7 +128,7 @@
         background-size:cover;
         overflow: hidden;
         color: #fff;
-        margin-top: 30px;   
+        margin-top: 20px;   
         margin-bottom: 80px;
         border:none;
         border-bottom:10px groove #fcccccc2;
@@ -329,11 +337,21 @@
     }
 
     .stories-items .item{
-        flex:1;
         border-radius: 20px;
         border:1px solid #000;
         display:flex;
-        flex-direction:column
+        flex-direction:column;
+        height: 350px;
+        width: 200px;
+        overflow:hidden
+    }
+
+    .stories-items .item:hover{
+        filter:brightness(1.15)
+    }
+
+    .stories-items .item:hover h4{
+        color:#f00
     }
 
     .stories-items .item .imgStorie{
@@ -342,10 +360,244 @@
         background-position:center;
         background-repeat: no-repeat;
         height:100px;
-        width: 50px;
-        flex:1;
+        flex:2;
     }
 
-    .stories-items  .item .item-desc h1{
+    .stories-items .item .item-desc {
         flex:1;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        text-align: center;
+    }
+
+    .stories-items  .item .item-desc h4{
+        font-size:1.3rem
+    }
+
+    .circles-bar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        
+        margin-top:25px;
+        
+    }
+
+    .circles-bar .circle{
+        background-color:#000;
+        border-radius:50%;
+        border:1px solid #000;
+        height:10px;
+        width:10px
+    }
+    
+    .like-content{
+        display: flex;
+        gap:30px
+    }
+
+    .like-items{
+        display:flex;
+        flex-direction:column;
+        flex:1;
+        gap:30px
+    }
+
+    .like-items .item{
+        border: 1px solid #beb8b8;
+        border-radius: 8px;
+        display: flex;
+        overflow: hidden;   
+        font-size: 0.9rem;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+    }
+
+    .like-items .item:hover{
+        filter:brightness(1.1);
+        color:#f00
+    }
+
+    .like-items h3{
+        font-size: 1.2rem;
+    }
+
+    footer {
+        width:100%;
+        margin-top:50px;
+        border-top:5px  #fcccccc2;
+        border-style: groove;
+    }
+
+    footer .container{
+        display: flex;
+        justify-content:space-between;
+        font-weight: bold;
+    }
+
+    footer .footer-leftSide,
+    footer .footer-rightSide{
+        margin: 10px 0;
+    }
+
+    footer .footer-leftSide p,
+    footer .footer-rightSide p{
+        margin: 10px 0
+    }
+
+    footer .footer-leftSide p:hover,
+    footer .footer-rightSide p:hover{
+        color:#f00;
+        cursor:pointer;
+        text-decoration:underline
+    }
+
+
+
+
+    @media (max-width: 920px){
+        .container{
+            width:800px
+        }
+
+        .default .content .info-items{
+            grid-template-columns: repeat(3, 250px);
+        }
+
+        .slider .shadow-slide .slider-lines .line{
+            width:100px
+        }
+    }
+
+    @media (max-width: 820px){
+        .container{
+            width:700px;
+        }
+
+        .default .content .info-items{
+            grid-template-columns: repeat(2, 250px);
+        }
+
+        .stories-items .item{
+            height: 250px;
+            width: 150px;
+        }
+        
+        .stories-items .item .item-desc h4{
+            
+            font-size:1.05rem
+        }
+
+        .like-content{
+            flex-wrap: wrap;
+            max-width:500px
+        }
+
+        header .container .item-header{
+            display: none;
+        }
+
+        header .container .imgMenu{
+            display:block;
+            margin-right: 30px;
+        }
+
+        .stories-items{
+            max-width: 550px;
+            overflow: hidden;
+        }
+
+        .stories-items .item{
+            min-height: 400px;
+            min-width: 250px;
+        }
+
+        footer .container{
+            width:600px
+        }
+    }
+
+    @media (max-width:600px){
+        .container{
+            max-width:530px
+        }
+
+        header .container .search-input{
+            width:130px
+        }
+
+        .slider .shadow-slide .description h1{
+            font-size:2.7rem
+        }
+
+        .slider .shadow-slide .slider-lines .line {
+            width: 63px;
+        }
+
+        .default .content .info-items {
+            grid-template-columns: repeat(2,200px);
+        }
+
+        .stories-items .item {
+            min-height: 250px ;
+            min-width: 150px ;
+        }
+
+        .like-content{
+            flex-direction: column;
+            
+        }
+
+        .like-items{
+            margin-top:50px;
+        }
+
+        footer .container{
+            width: 400px;
+            font-size: 0.95rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+    }
+}
+
+    @media (max-width: 400px){
+        .container{
+            width: 300px
+        }
+
+        header{
+            height:135px;
+        }
+
+        header .container{
+            flex-wrap:wrap
+        }
+
+        header .container .search-input {
+            width: 170px;
+        }
+
+        .slider .shadow-slide .description .infos {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .slider .shadow-slide .slider-lines .line{
+            width:28px
+        }
+
+        .default .content .info-items {
+            grid-template-columns: 225px;
+            justify-content: center;
+        }
+
+        footer .container{
+            width:300px
+        }
     }
